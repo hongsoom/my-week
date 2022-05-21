@@ -7,11 +7,9 @@ import Score from './components/Score';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route exact path="/" component={Main}/>
+        <Route exact path="/" component={Main} />
         <Route exact path="/Detail" component={Detail} />
         <Route exact path="/Score" component={Score} />
-      </Routes>
     </div>
   );
 }
