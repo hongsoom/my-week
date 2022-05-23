@@ -6,8 +6,9 @@ import { useHistory } from "react-router-dom";
 const Main = (props) => {
     const history = useHistory();
 
-    const week = props.week    
+    const week = props.week;    
     const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 4) + 1));
+    const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
 
     const rateAverage = rate => {
       if(rate.length === 0) return 0;
@@ -15,29 +16,30 @@ const Main = (props) => {
       return sum.toFixed(1);
     }
 
-    const removeRate = (rate) => {
-      setRate(rate.length === 0)
-      return rateAverage(rate)
+    const removeRate = () => {
+      setRate(rate.filter((x) => x === 0));
     }
-
-    console.log(rate)
-    console.log(week)
-    console.log(rateAverage(rate))
-    console.log(removeRate)
     
     return (
         <Container>
             <Title >내 일주일은?</Title>
+          <div>
             {week.map((week, index) => {
         return ( 
-            <div>
-            <Rate key={index}> {week} </Rate>
+            
+            <Rate key={index}> {week} 
+            
+              {circle.map((circle, index) =>
+                <Circle style={{backgroundColor : rate[index] == circle[index] ?  'green' : 'yellow'}}></Circle>
+              )}
+            
               <button onClick={ () => {
                history.push("/detail/" + index);
             }}>  PUSH
               </button>
-            </div>
+            </Rate>
             )})}
+          </div>
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
     </Container>
     );
