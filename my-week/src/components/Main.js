@@ -6,7 +6,8 @@ import { useHistory } from "react-router-dom";
 const Main = (props) => {
     const history = useHistory();
 
-    const week = props.week;    
+    const week = props.week; 
+       
     const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 4) + 1));
     const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
 

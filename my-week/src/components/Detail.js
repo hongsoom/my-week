@@ -5,8 +5,8 @@ import { useParams, useHistory } from "react-router-dom";
 
 const Detail = (props) => {
     const week = props.week
-    const index = useParams();
-    console.log(index)
+    const { id } = useParams();
+    console.log(id)
     
     const history = useHistory();
 
@@ -18,7 +18,7 @@ const Detail = (props) => {
 
     return (
         <div>
-            <h3>{week[index.id]} 평점 남기기</h3>
+            <h3>{week[id]}요일 평점 남기기</h3>
             {circle.map((num, index) => {
                 return (
                     <Circle key={index} style={{backgroundColor : index ?  'green' : 'yellow'}}></Circle>
