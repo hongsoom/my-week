@@ -1,15 +1,22 @@
-import {Route,Routes} from "react-router-dom";
+import {Route,Switch} from "react-router-dom";
 import React from "react";
 import Main from "./components/Main";
 import Detail from './components/Detail';
-import Score from './components/Score';
 
-function App() {
+
+const App = () => {
+  const [week, setWeek] = React.useState(['일', '월', '화', '수', '목', '금', '토']);
+
   return (
     <div className="App">
-        <Route exact path="/" component={Main} />
-        <Route exact path="/Detail" component={Detail} />
-        <Route exact path="/Score" component={Score} />
+      <Switch>
+        <Route path="/" exact>
+          <Main week={week} />
+        </Route> 
+        <Route path="/detail/:id" exact>
+          <Detail week={week} />
+        </Route> 
+      </Switch>
     </div>
   );
 }
