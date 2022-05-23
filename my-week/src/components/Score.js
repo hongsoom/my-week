@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Score = (props) => {
+    const {rateAverage, removeRate} = props;
     return (
         <div>
             <InputWrap>
-                <h1>평균페이지</h1>
+                <h3>평균 평점</h3>
+                <p>{rateAverage}</p>
+                <button onClick={removeRate}>Reset</button>
             </InputWrap>
         </div>    
     )
