@@ -4,12 +4,26 @@ import styled from "styled-components";
 const Score = (props) => {
     const {rateAverage, removeRate} = props;
     return (
-        <div>
-            <h3>평균 평점</h3>
+        <InputWrap>
+            <p>평균 평점</p>
             <p>{rateAverage}</p>
             <button onClick={removeRate}>Reset</button>
-        </div>    
+        </InputWrap>   
     )
 }
+
+const InputWrap = styled.div`
+  width: 50vw;
+  max-width: 350px;
+  text-align: center;
+  p {
+    color: black;
+    font-weight : bold;
+    font-size : 20px;
+  }
+  button {
+      
+  }
+`;
 
 export default Score;

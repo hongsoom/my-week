@@ -9,7 +9,7 @@ const Main = (props) => {
     const week = props.week; 
        
     const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 5) + 1));
-    const [circle, setCircle] = useState([1,2,3,4,5]);
+    const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
 
     const rateAverage = rate => {
       if(rate.length === 0) return 0;
@@ -26,20 +26,20 @@ const Main = (props) => {
     return (
         <Container>
             <Title >내 일주일은?</Title>
-          <div>
+   
             {week.map((week, index) => {
         return ( 
             <Date key={index}> {week} 
           {circle.map((num,i) =>
                 <Circle key={i} style={{backgroundColor : rate[index] > i ?  'yellow' : ('#D3D3D3')}}></Circle>
               )}
-              <button onClick={ () => {
+              <Button onClick={ () => {
                history.push("/detail/" + index);
-            }}>  PUSH
-              </button>
+            }}>
+              </Button>
             </Date>
             )})}
-          </div>
+  
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
     </Container>
     );
@@ -53,13 +53,15 @@ const Container = styled.div`
   margin: 20px auto;
   border-radius: 5px;
   border: 1px solid #ddd;
+  text-align: center;
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   color: black;
-  text-align: center;
-  font-size :15px;
-  margin : 50px;
+  font-size : 25px;
+  margin-top : 60px;
+  margin-bottom : 25px;
+  font-weight : bold;
 `;
 
 const Date = styled.div`
@@ -67,6 +69,8 @@ const Date = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-weight : bold;
+  font-size : 18px;
 `;
 
 const Circle = styled.div`
@@ -74,6 +78,16 @@ const Circle = styled.div`
   height: 30px;
   border-radius: 30px;
   margin: 20px 10px;
+`;
+
+const Button = styled.div`
+  width: 0px;
+  height: 0px;
+  border-left: 25px solid #666666;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  cursor : pointer;
+  margin-left : 20px;
 `;
 
 export default Main;
