@@ -20,17 +20,17 @@ const Detail = (props) => {
 
     return (
         <Container>
-            <h3>{week[id]}요일 평점 남기기</h3>
+            <Title>{week[id]}요일 평점 남기기</Title>
             <CircleWarp>
             {circle.map((circle, i) => {
                 return (
                     <Circle key={i} onClick={ () => setClick(i)} 
-                    style={{backgroundColor : click >= i ?  'yellow' : ('#D3D3D3')}}>
+                    style={{backgroundColor : click >= i ?  ('#FFB6C1') : ('#FFF0F5')}}>
                     </Circle>
                 )
             })}
             </CircleWarp>
-            <button onClick={onClick}>평점 남기기</button>
+            <Button onClick={onClick}>평점 남기기</Button>
         </Container>
     )
 }
@@ -38,26 +38,42 @@ const Detail = (props) => {
 const Container = styled.div`
   max-width: 350px;
   min-height: 80vh;
-  padding: 16px;
-  margin: 20px auto;
+  padding: 50px;
+  margin: 50px auto;
   border-radius: 5px;
   border: 1px solid #ddd;
   text-align: center;
+`;
+
+const Title = styled.div`
+    margin-top: 20px;
+    font-weight: 900;
+    font-size : 20px;
+    padding: 0.2rem;
+    border-radius: 5px;
 `;
 
 const CircleWarp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 10px;
 `;
 
 const Circle = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  margin: 20px 10px;
-  cursor : pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    margin: 10px 5px;
+    cursor : pointer;
+`;
+
+const Button = styled.div`
+    border-radius: 5px;    
+    border : 1px solid black;
+    cursor : pointer;
+    padding : 15px;
+    margin : 0 30px;
 `;
 
 export default Detail;
