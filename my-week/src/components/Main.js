@@ -8,7 +8,7 @@ const Main = (props) => {
 
     const week = props.week; 
        
-    const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 4) + 1));
+    const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 5) + 1));
     const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
 
     const rateAverage = rate => {
@@ -21,6 +21,8 @@ const Main = (props) => {
       setRate(rate.filter((x) => x === 0));
     }
     
+    console.log(rate)
+
     return (
         <Container>
             <Title >내 일주일은?</Title>
@@ -29,11 +31,9 @@ const Main = (props) => {
         return ( 
             
             <Rate key={index}> {week} 
-            
-              {circle.map((circle, index) =>
-                <Circle style={{backgroundColor : rate[index] == circle[index] ?  'green' : 'yellow'}}></Circle>
+          {circle.map((i) =>
+                <Circle style={{backgroundColor : rate[index] + 1 > i ?  'yellow' : ('#D3D3D3')}}></Circle>
               )}
-            
               <button onClick={ () => {
                history.push("/detail/" + index);
             }}>  PUSH

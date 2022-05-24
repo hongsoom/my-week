@@ -12,5 +12,4 @@ const Score = (props) => {
     )
 }
 
-
 export default Score;

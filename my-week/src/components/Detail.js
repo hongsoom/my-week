@@ -5,9 +5,8 @@ import { useParams, useHistory } from "react-router-dom";
 
 const Detail = (props) => {
     const week = props.week
-    const { id } = useParams();
-    console.log(id)
     
+    const { id } = useParams();
     const history = useHistory();
 
     const [circle, setCircle] = useState([0, 0, 0, 0, 0])
