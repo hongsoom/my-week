@@ -9,7 +9,7 @@ const Main = (props) => {
     const week = props.week; 
        
     const [rate, setRate] = useState(Array.from({length : 7}, (value) => value = Math.floor(Math.random() * 5) + 1));
-    const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
+    const [circle, setCircle] = useState([1,2,3,4,5]);
 
     const rateAverage = rate => {
       if(rate.length === 0) return 0;
@@ -30,8 +30,8 @@ const Main = (props) => {
             {week.map((week, index) => {
         return ( 
             <Date key={index}> {week} 
-          {circle.map((i) =>
-                <Circle key={i} style={{backgroundColor : rate[index] >= i ?  'yellow' : ('#D3D3D3')}}></Circle>
+          {circle.map((num,i) =>
+                <Circle key={i} style={{backgroundColor : rate[index] > i ?  'yellow' : ('#D3D3D3')}}></Circle>
               )}
               <button onClick={ () => {
                history.push("/detail/" + index);
