@@ -31,7 +31,7 @@ const Main = (props) => {
         return ( 
             <Date key={index}> {week} 
           {circle.map((num,i) =>
-                <Circle key={i} style={{backgroundColor : rate[index] > i ?  'yellow' : ('#D3D3D3')}}></Circle>
+                <Circle key={i} style={{backgroundColor : rate[index] > i ?  ('#FFB6C1') : ('#FFF0F5')}}></Circle>
               )}
               <Button onClick={ () => {
                history.push("/detail/" + index);
@@ -39,7 +39,6 @@ const Main = (props) => {
               </Button>
             </Date>
             )})}
-  
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
     </Container>
     );
@@ -83,7 +82,7 @@ const Circle = styled.div`
 const Button = styled.div`
   width: 0px;
   height: 0px;
-  border-left: 25px solid #666666;
+  border-left: 25px solid	#8B008B;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   cursor : pointer;

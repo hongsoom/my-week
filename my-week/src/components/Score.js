@@ -7,7 +7,7 @@ const Score = (props) => {
         <InputWrap>
             <p>평균 평점</p>
             <p>{rateAverage}</p>
-            <button onClick={removeRate}>Reset</button>
+            <Button onClick={removeRate}>Reset</Button>
         </InputWrap>   
     )
 }
@@ -21,9 +21,13 @@ const InputWrap = styled.div`
     font-weight : bold;
     font-size : 20px;
   }
-  button {
-      
-  }
+`;
+const Button = styled.div`
+    border-radius: 5px;    
+    border : 1px solid black;
+    cursor : pointer;
+    padding : 15px;
+    margin : 0 30px;
 `;
 
 export default Score;
