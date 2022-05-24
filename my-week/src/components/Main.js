@@ -29,16 +29,15 @@ const Main = (props) => {
           <div>
             {week.map((week, index) => {
         return ( 
-            
-            <Rate key={index}> {week} 
+            <Date key={index}> {week} 
           {circle.map((i) =>
-                <Circle style={{backgroundColor : rate[index] + 1 > i ?  'yellow' : ('#D3D3D3')}}></Circle>
+                <Circle key={i} style={{backgroundColor : rate[index] >= i ?  'yellow' : ('#D3D3D3')}}></Circle>
               )}
               <button onClick={ () => {
                history.push("/detail/" + index);
             }}>  PUSH
               </button>
-            </Rate>
+            </Date>
             )})}
           </div>
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
@@ -50,7 +49,6 @@ const Main = (props) => {
 const Container = styled.div`
   max-width: 350px;
   min-height: 80vh;
-  background-color: #fff;
   padding: 16px;
   margin: 20px auto;
   border-radius: 5px;
@@ -60,11 +58,11 @@ const Container = styled.div`
 const Title = styled.h1`
   color: black;
   text-align: center;
-  font-size : 15px;
+  font-size :15px;
   margin : 50px;
 `;
 
-const Rate = styled.div`
+const Date = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +74,6 @@ const Circle = styled.div`
   height: 30px;
   border-radius: 30px;
   margin: 20px 10px;
-  border: 1px solid black;
 `;
 
 export default Main;
