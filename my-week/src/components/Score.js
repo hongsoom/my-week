@@ -5,9 +5,9 @@ const Score = (props) => {
     const {rateAverage, removeRate} = props;
     return (
         <InputWrap>
-            <p>평균 평점</p>
+            <h3>평균 평점</h3>
             <p>{rateAverage}</p>
-            <Button onClick={removeRate}>Reset</Button>
+            <button onClick={removeRate}>Reset</button>
         </InputWrap>   
     )
 }
@@ -16,18 +16,32 @@ const InputWrap = styled.div`
   width: 50vw;
   max-width: 350px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h3 {
+    margin-bottom: 5px;
+    font-weight : bold;
+  }
   p {
+    margin: 5px;
     color: black;
     font-weight : bold;
     font-size : 20px;
   }
-`;
-const Button = styled.div`
+  button {
+    color : white;
+    font-size : 15px;
+    font-weight : bold;
+    background : #92B4EC;
     border-radius: 5px;    
-    border : 1px solid black;
+    border : 1px solid #92B4EC;
     cursor : pointer;
-    padding : 15px;
-    margin : 0 30px;
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+  }
 `;
 
 export default Score;
