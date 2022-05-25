@@ -1,5 +1,6 @@
 ## 내 일주일 평점 남기기 🟡🟡🟡🟡🟡
 
+
 ### 1. 구현 기능
 - **1) 메인 페이지**
     - [ ]  일주일 평점 보여주기
@@ -18,8 +19,10 @@
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"> 
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+
 - **라이브러리**
 <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+
 - **호스팅**
 <img src="https://img.shields.io/badge/Amazon AWS-232F3E?style=for-the-badge&logo=Amazon AWS&logoColor=white">
 
