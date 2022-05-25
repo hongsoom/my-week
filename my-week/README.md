@@ -28,9 +28,11 @@
 
 ### 3. 실행화면
 - **메인 화면**
+- 
 ![](https://velog.velcdn.com/images/hongsoom/post/ed02a20e-01a5-49cf-a0ca-4e89c23674e8/image.PNG)
 
 - **상세 화면**
+- 
 ![](https://velog.velcdn.com/images/hongsoom/post/60e41dd1-5884-494d-a158-f8799425b418/image.PNG)
 
 - **배포 사이트**
