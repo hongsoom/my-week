@@ -26,12 +26,12 @@ const Main = (props) => {
     return (
         <Container>
             <Title >내 일주일은?</Title>
-   
+ 
             {week.map((week, index) => {
         return ( 
             <Date key={index}> {week} 
           {circle.map((num,i) =>
-                <Circle key={i} style={{backgroundColor : rate[index] > i ?  ('#FFB6C1') : ('#FFF0F5')}}></Circle>
+                <Circle key={i} style={{backgroundColor : rate[index] > i ?  ('#FFD24C') : ('#FFE69A')}}></Circle>
               )}
               <Button onClick={ () => {
                history.push("/detail/" + index);
@@ -39,6 +39,7 @@ const Main = (props) => {
               </Button>
             </Date>
             )})}
+
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
     </Container>
     );
@@ -48,19 +49,20 @@ const Main = (props) => {
 const Container = styled.div`
   max-width: 350px;
   min-height: 80vh;
-  padding: 16px;
-  margin: 20px auto;
+  width: 80vw;
+  height: 90vh;
+  margin: 5vh auto;
+  padding: 5vh 0px;
   border-radius: 5px;
   border: 1px solid #ddd;
-  text-align: center;
+  box-sizing: border-box;
 `;
 
 const Title = styled.div`
-  color: black;
-  font-size : 25px;
-  margin-top : 60px;
-  margin-bottom : 25px;
   font-weight : bold;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
 `;
 
 const Date = styled.div`
@@ -69,24 +71,22 @@ const Date = styled.div`
   align-items: center;
   width: 100%;
   font-weight : bold;
-  font-size : 18px;
+  margin-bottom : 5px;
 `;
 
 const Circle = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  margin: 20px 10px;
+  margin: 10px 5px;
 `;
 
 const Button = styled.div`
-  width: 0px;
-  height: 0px;
-  border-left: 25px solid	#8B008B;
+  border-left: 30px solid	#92B4EC;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   cursor : pointer;
-  margin-left : 20px;
+  margin-left : 5px;
 `;
 
 export default Main;
