@@ -20,8 +20,6 @@ const Main = (props) => {
     const removeRate = () => {
       setRate(rate.filter((x) => x === 0));
     }
-    
-    console.log(rate)
 
     return (
         <Container>
