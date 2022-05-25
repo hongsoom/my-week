@@ -81,7 +81,7 @@ const Button = styled.div`
     border : 1px solid #92B4EC;
     cursor : pointer;
     padding : 13px;
-    margin : 10px 60px;
+    margin : 15px 60px;
     text-align: center;
 `;
 
