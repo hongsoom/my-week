@@ -12,20 +12,20 @@ const Detail = (props) => {
     const [circle, setCircle] = useState([1, 2, 3, 4, 5]);
     const [click, setClick] = useState();
 
-    console.log(click)
-    
     const onClick = () => {
         history.push('/')
     } 
 
     return (
         <Container>
-            <Title>{week[id]}요일 평점 남기기</Title>
+            <h3>
+                <span>{week[id]}요일</span> 평점 남기기
+            </h3>
             <CircleWarp>
             {circle.map((circle, i) => {
                 return (
                     <Circle key={i} onClick={ () => setClick(i)} 
-                    style={{backgroundColor : click >= i ?  ('#FFB6C1') : ('#FFF0F5')}}>
+                    style={{backgroundColor : click >= i ?  ('#FFD24C') : ('#FFE69A')}}>
                     </Circle>
                 )
             })}
@@ -36,21 +36,26 @@ const Detail = (props) => {
 }
 
 const Container = styled.div`
-  max-width: 350px;
-  min-height: 80vh;
-  padding: 50px;
-  margin: 50px auto;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  text-align: center;
-`;
-
-const Title = styled.div`
-    margin-top: 20px;
-    font-weight: 900;
-    font-size : 20px;
-    padding: 0.2rem;
+    max-width: 350px;
+    min-height: 80vh;
+    width: 80vw;
+    height: 90vh;
+    margin: 5vh auto;
+    padding: 5vh 0px;
     border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+
+    h3 {
+        text-align: center;
+    }
+    span {
+        background : orange;
+        color : white;
+        border-radius: 5px;
+        font-weight: 900;
+        padding : 3px;
+    }
 `;
 
 const CircleWarp = styled.div`
@@ -61,19 +66,23 @@ const CircleWarp = styled.div`
 `;
 
 const Circle = styled.div`
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 30px;
     margin: 10px 5px;
     cursor : pointer;
 `;
 
 const Button = styled.div`
+    color : white;
+    font-weight : bold;
+    background : #92B4EC;
     border-radius: 5px;    
-    border : 1px solid black;
+    border : 1px solid #92B4EC;
     cursor : pointer;
-    padding : 15px;
-    margin : 0 30px;
+    padding : 13px;
+    margin : 10px 60px;
+    text-align: center;
 `;
 
 export default Detail;
