@@ -37,7 +37,6 @@ const Main = (props) => {
               </Button>
             </Date>
             )})}
-
         <Score rateAverage={rateAverage(rate)} removeRate={removeRate}  />
     </Container>
     );
