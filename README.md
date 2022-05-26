@@ -36,7 +36,7 @@
 ![](https://velog.velcdn.com/images/hongsoom/post/60e41dd1-5884-494d-a158-f8799425b418/image.PNG)
 
 - **배포 사이트**
-[내 일주일 평점 남기기 (클릭)](http://my-week.s3-website.ap-northeast-2.amazonaws.com)
+[내 일주일 평점 남기기 (클릭)](http://my-week.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### 4. 스스로에게 질문
 - **Q1. 평균 평점 state를 메인 컴포넌트에?, 하위 컴포넌트인 평균 평점 컴포넌트에?**
